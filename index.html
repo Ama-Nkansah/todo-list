@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+IT+Trad:wght@100..400&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif ;
+        }
+
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            background:linear-gradient(to top, #d565a2, #d6d6ce);
+            padding:10px;
+            border: 10px solid;
+        }
+
+    .todo-list{
+        border: 2px dashed;
+        max-width: 550px;
+        width: 100%;
+        margin: 50px auto 20px;
+        padding: 40px;
+        border-radius: 10px;
+        background:white;
+    }
+
+    h1{
+        font-family: "Playwrite IT Trad", cursive;
+        font-optical-sizing: auto;
+        font-weight: normal;
+        font-style: normal;
+      }
+
+ .todo-list h2{
+        color:rgb(229, 126, 161);
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        margin-left: 130px;
+    }
+
+    .todo-list h2 img{
+        margin: 30px;
+        width: 40px;
+    }
+
+    .row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 10px;
+        padding-left: 20px;
+        background: pink;
+        margin-bottom: 30px; 
+    }
+
+    input{
+        flex: 1;
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 10px;
+        font-weight: 20px;
+    }
+
+    button{
+        border: none;
+        outline: none;
+        padding: 15px 30px;
+        border-radius: 10px;
+        background:rgb(237, 151, 165);
+        cursor: pointer;
+        font-size: small;
+    }
+    ul>li{
+        list-style: none;
+        cursor: pointer;
+        user-select: none;
+        padding: 10px 30px;
+        font-size: large;
+        position: relative;
+        left: 20px;
+
+    }
+
+    ul>li::before{
+        content: "";
+        background-color:pink ;
+        width: 20px;
+        height: 20px;
+        border-radius: 50px;
+        display: inline-block;
+        position: absolute;
+        left: -5px;
+        background-image:url(img/unchecked.jpeg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    ul>li.checked{
+        color: #d565a2;
+        text-decoration: line-through;
+   }
+
+    ul>li.checked::before{
+     background-image: url(img/checked.png);
+    }
+
+
+    </style>
+</head>
+
+<body>
+ <div class="container">
+    <div class="todo-list">
+        <h1> Dainty</h1>
+        <h2>To-Do List <img src="./img/pink to do icon.jpeg" width="60px" alt="to-list icon"></h2>
+        <div class="row">
+            <input type="text" id="input-text" placeholder="Add your task">
+            <button onclick ="addTask()">Add</button>
+        </div>
+        <ul id="list-container">
+           <!-- <li class="checked">Task 1</li>
+            <li>Task 2</li>
+            <li>Task 3</li>
+            -->
+        </ul>
+    </div>
+
+<script src="script.js"></script>
+ </div>   
+</body>
+</html>
