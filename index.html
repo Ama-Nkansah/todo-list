@@ -56,6 +56,8 @@
 
    .row{
         display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
         align-items: center;
         justify-content: space-between;
         border-radius: 10px;
@@ -65,15 +67,6 @@
         margin-right: 30px;
         border: solid 2px ;
         width: 80%;
-    }
-
-    .row-two{
-        width: fit-content;
-        border-radius: 10px;
-        position: relative;
-        top:-73px;
-        left:390px;
-
     }
 
     input{
@@ -88,7 +81,6 @@
     
 
     button{
-        border: solid 2px;
         outline: none;
         padding: 12px 20px;
         border-radius: 10px;
@@ -167,27 +159,68 @@
     justify-content: center;
    }
 
-   .row{
-    position: relative;
-    right: 40px;
-    border: solid ;
-    width:50vw;
-    margin: 5px;
- }
-    .row-two{
-     position: relative;
-     left: 180px;
-     top: -48px;
-     margin: 0;
-     width: 50vw;
-    }
-   button{
-    position: absolute;
-    border: solid;
-   }
  input::placeholder{
     font-size: 10px; 
  }
+
+ .row{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+   }
+
+   #addbutton{
+    position: absolute;
+    right: 70px;
+   }
+
+   ul>li{
+   position: relative;
+   bottom: 10px;
+   left: -20px;
+   word-wrap: break-word;
+}
+     
+span{
+    position: absolute;
+}
+
+}
+@media (max-width:295px){
+    .row{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 40px;
+        position: relative;
+        left: -30px;
+    }
+
+   #addbutton{
+    position: absolute;
+    right: -89px;
+    top:- 40px;
+    overflow: hidden;
+   }
+
+   input::placeholder{
+    font-size: 10px; 
+  }
+input{
+    width:40px
+}
+
+ul>li{
+   position: relative;
+   bottom: 10px;
+   left: -20px;
+   word-wrap: break-word;
+}
+     
+span{
+    position: absolute;
+    left: 100px;
+}
 
 }
 
@@ -201,9 +234,10 @@
         <h2>To-Do List <img src="./img/pink to do icon.jpeg" width="60px" alt="to-list icon"></h2>
         <div class="row">
             <input type="text" id="input-text" placeholder="Add your task">
-        </div>
-        <div class="row-two">
-            <button onclick ="addTask()">Add</button>
+            <div id="addbutton">
+                <button onclick ="addTask()">Add</button>
+            </div>
+            
         </div>
         <ul id="list-container">
            <!-- <li class="checked">Task 1</li>
